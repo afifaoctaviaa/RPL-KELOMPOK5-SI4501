@@ -1,4 +1,4 @@
-<?php
+x`<?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -17,8 +17,13 @@ Route::get('/tentangkami', function () {
     return view('tentangkami');
 });
 
-Route::get('/registrasi', [RegisterController::class, 'register']);
+// Registrasi
+Route::get('/registrasi', [RegisterController::class, 'register'])->middleware('guest');
 Route::post('/registrasi', [RegisterController::class, 'store']);
-Route::get('/login', [LoginController::class, 'login']);
+
+// Login
+Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
+
+// Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index']);
