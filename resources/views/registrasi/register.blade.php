@@ -55,7 +55,7 @@
                         </div>
                         <div class="form-group mt-3">
                             <label for="my-input my-2">Password</label>
-                            <input id="password" class="form-control @error('password') is invalid @enderror" type="text" name="password" required>
+                            <input id="password" class="form-control @error('password') is invalid @enderror" type="password" name="password" required>
                             @error('password')
                             <div class="invalid-feedback">{{$message}}</div>
                             @enderror
