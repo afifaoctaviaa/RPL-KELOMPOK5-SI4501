@@ -1,4 +1,4 @@
-<?php
+x`<?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -26,6 +26,7 @@ Route::get('/kebijakanprivasi', function () {
 Route::get('/tentangkami', function () {
     return view('tentangkami');
 });
+
 //Rute Registrasi
 Route::get('/registrasi', [RegisterController::class, 'register'])->middleware('guest');
 Route::post('/registrasi', [RegisterController::class, 'store']);
@@ -52,5 +53,6 @@ Route::post('/artikel/tambah', [Artikelcontroller::class, 'store'])->middleware(
 Route::get('/artikel/edit/{slug}', [Artikelcontroller::class, 'edit'])->middleware('auth');
 Route::patch('/artikel/edit/{slug}', [Artikelcontroller::class, 'update'])->middleware('auth');
 Route::delete('/artikel/{id}', [Artikelcontroller::class, 'destroy'])->middleware('auth');
-//Mange User
-Route::get('/manage-user', [ManageUserController::class, 'index'])->middleware('auth');
+// Notifikasi
+Route::get('/notifikasi', [NotificationController::class, 'index']);
+
