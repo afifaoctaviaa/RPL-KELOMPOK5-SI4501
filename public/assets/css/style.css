@@ -118,27 +118,6 @@
     box-shadow: 0 0 0 0.2rem var(--hijau-muda);
 }
 
-
-#hero {
-    height: 350px;
-    background-image: url('../img/hero.png');
-    background-size: cover;
-    padding-top: 50px;
-}
-
-#hero .title {
-    color: var(--cokelat-muda);
-    font-size: 50px;
-    font-weight: 800;
-}
-
-#hero .subtitle {
-    color: #D7C39D;
-    font-size: 18px;
-}
-
-
-
 @media (max-width: 991.98px) { 
 
     .navbar .navbar-nav {
