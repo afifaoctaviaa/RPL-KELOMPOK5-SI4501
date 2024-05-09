@@ -2,3 +2,23 @@
     background-color: var(--hijau-tua);
 }
 
+
+#donasi #hero {
+    height: 350px;
+    background-image: url('../img/hero.png');
+    background-size: cover;
+    padding-top: 50px;
+}
+
+#donasi #hero .title {
+    color: var(--cokelat-muda);
+    font-size: 50px;
+    font-weight: 800;
+}
+
+#donasi #hero .subtitle {
+    color: #D7C39D;
+    font-size: 18px;
+}
+
+

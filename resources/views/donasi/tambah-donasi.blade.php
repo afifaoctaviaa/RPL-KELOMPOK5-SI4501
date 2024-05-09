@@ -1,8 +1,3 @@
-@include('layout.main-layout')
-@section('tittle', 'BagiBarang | Donasi')
-@extends('layout.template-layout')
-
-
 <?php
 
 if (isset($_GET['jumlah_barang'])) {
@@ -38,6 +33,8 @@ if (isset($_GET['jumlah_barang'])) {
 </head>
 
 <body id="donasi">
+
+        <x-navbar></x-navbar>
 
 
     {{-- Hero Section --}}
