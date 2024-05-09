@@ -1,4 +1,4 @@
-<?php
+x`<?php
 
 use App\Http\Controllers\Artikelcontroller;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +25,7 @@ Route::get('/kebijakanprivasi', function () {
 Route::get('/tentangkami', function () {
     return view('tentangkami');
 });
+
 //Rute Registrasi
 Route::get('/registrasi', [RegisterController::class, 'register'])->middleware('guest');
 Route::post('/registrasi', [RegisterController::class, 'store']);
