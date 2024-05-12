@@ -44,6 +44,7 @@ Route::get('/verifikasi', [ConfirmationController::class, 'getdata'])->middlewar
 Route::get('/verifikasi-update/{id}', [ConfirmationController::class, 'showdata'])->middleware('auth');
 Route::put('/verifikasi-update/{id}', [ConfirmationController::class, 'update'])->middleware('auth');
 
+
 //Artikel
 Route::get('/artikel', [Artikelcontroller::class, 'index'])->middleware('auth');
 Route::get('/artikel/tambah', [Artikelcontroller::class, 'create'])->middleware('auth');

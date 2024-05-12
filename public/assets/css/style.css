@@ -52,9 +52,6 @@
 }
 
 /* Breadcrumb */
-.breadcrumb {
-
-}
 .breadcrumb-item+.breadcrumb-item::before {
     content: '>';
     color:  #D7C39D;

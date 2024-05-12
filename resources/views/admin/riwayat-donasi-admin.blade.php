@@ -11,6 +11,7 @@
               {{ session('message') }}
             </div>
         @endif
+
         <table class="table table-striped table-sm">
           <thead>
             <tr>
