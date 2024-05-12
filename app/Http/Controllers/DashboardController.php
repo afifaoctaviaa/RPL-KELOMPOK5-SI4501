@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donasi;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -9,12 +11,14 @@ class DashboardController extends Controller
     //Function untuk menampilkan Dashboard Admin
     public function admin()
     {
-        return view('dashboard.index-admin');
+        $donasi = Donasi::all();
+        return view('dashboard.index-admin', compact('donasi'));
     }
     //Function untuk menampilkan Dashboard User
     public function index()
     {
-        return view('dashboard.index-users');
+        $notifications = Notification::select(['judul', 'created_at'])->orderBy('created_at', 'DESC')->take(5)->get();
+        return view('dashboard.index-users', compact('notifications'));
     }
 
     //Function untuk menampilkan Riwayat Donasi
