@@ -53,6 +53,5 @@ Route::get('/artikel/edit/{slug}', [Artikelcontroller::class, 'edit'])->middlewa
 Route::patch('/artikel/edit/{slug}', [Artikelcontroller::class, 'update'])->middleware('auth');
 Route::delete('/artikel/{id}', [Artikelcontroller::class, 'destroy'])->middleware('auth');
 
-
 // Notifikasi
 Route::get('/notifikasi', [NotificationController::class, 'index']);
