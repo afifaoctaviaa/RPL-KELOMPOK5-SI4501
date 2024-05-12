@@ -44,7 +44,6 @@ Route::get('/verifikasi', [ConfirmationController::class, 'getdata'])->middlewar
 Route::get('/verifikasi-update/{id}', [ConfirmationController::class, 'showdata'])->middleware('auth');
 Route::put('/verifikasi-update/{id}', [ConfirmationController::class, 'update'])->middleware('auth');
 
-
 //Artikel
 Route::get('/artikel', [Artikelcontroller::class, 'index'])->middleware('auth');
 Route::get('/artikel/tambah', [Artikelcontroller::class, 'create'])->middleware('auth');
@@ -52,7 +51,6 @@ Route::post('/artikel/tambah', [Artikelcontroller::class, 'store'])->middleware(
 Route::get('/artikel/edit/{slug}', [Artikelcontroller::class, 'edit'])->middleware('auth');
 Route::patch('/artikel/edit/{slug}', [Artikelcontroller::class, 'update'])->middleware('auth');
 Route::delete('/artikel/{id}', [Artikelcontroller::class, 'destroy'])->middleware('auth');
-
 
 // Notifikasi
 Route::get('/notifikasi', [NotificationController::class, 'index']);
