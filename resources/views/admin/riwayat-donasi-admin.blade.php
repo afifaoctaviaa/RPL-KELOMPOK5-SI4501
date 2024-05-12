@@ -6,6 +6,11 @@
 @include('layout.main-layout')
 
 <div class="table-responsive small ms-3 mt-3">
+        @if (session('message'))
+            <div class="alert alert-success">
+              {{ session('message') }}
+            </div>
+        @endif
         <table class="table table-striped table-sm">
           <thead>
             <tr>
@@ -36,7 +41,9 @@
               </td>
               <td>
               <div class="btn-group">
-                <a href="/verifikasi-update" class="btn btn-primary">Change Status</a>
+                @if($item->status == 'PENDING')
+                <a href="{{ url('/verifikasi-update').'/'.$item->id }}" class="btn btn-primary">Change Status</a>
+                @endif
               </div>
               </td>
             </tr>

@@ -2,7 +2,6 @@
     background-color: var(--hijau-tua);
 }
 
-
 #donasi #hero {
     height: 350px;
     background-image: url('../img/hero.png');
@@ -20,5 +19,3 @@
     color: #D7C39D;
     font-size: 18px;
 }
-
-
