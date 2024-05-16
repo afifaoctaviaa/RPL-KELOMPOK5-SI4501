@@ -34,7 +34,10 @@ if (isset($_GET['jumlah_barang'])) {
 
 <body id="donasi">
 
-    <x-navbar></x-navbar>
+
+        <x-navbar></x-navbar>
+
+
 
     {{-- Hero Section --}}
     <section id="hero">

@@ -31,6 +31,7 @@
 <body id="artikel">
 
     <!-- <x-navbar></x-navbar> -->
+
     <div class="container">
 
 
