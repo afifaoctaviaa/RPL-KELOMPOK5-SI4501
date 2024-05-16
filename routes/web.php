@@ -1,29 +1,20 @@
-x`<?php
+<?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\faqController;
+use App\Http\Controllers\DonasiController;
 
-Route::get('/', function () {
-    return view('landingpage');
+Route::get('/tambah-donasi', function () {
+    return view('donasi.tambah-donasi');
 });
 
-Route::get('/kebijakanprivasi', function () {
-    return view('kebijakanprivasi');
-});
+Route::post('/tambah-donasi', [DonasiController::class, 'store']);
+Route::get('/faq', [faqController::class, 'faqView'])->name('faq');
 
-Route::get('/tentangkami', function () {
-    return view('tentangkami');
-});
-
-// Registrasi
-Route::get('/registrasi', [RegisterController::class, 'register'])->middleware('guest');
-Route::post('/registrasi', [RegisterController::class, 'store']);
-
-// Login
-Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate']);
-
-// Dashboard
-Route::get('/dashboard', [DashboardController::class, 'index']);
+// manage faq
+Route::get('/manageFaq', [faqController::class, 'manageFaq'])->name('manageFaq');
+Route::get('/addFaqPage', [faqController::class, 'addFaqPage'])->name('addFaqPage');
+Route::post('/addFaq', [faqController::class, 'addFaq'])->name('addFaq');
+Route::get('/updateFaq/{id}', [faqController::class, 'updateFaq'])->name('updateFaq');
+Route::post('/updateDataFaq/{id}', [faqController::class, 'update'])->name('updateDataFaq');
+Route::get('/delete-faq/{id}', [faqController::class, 'delete'])->name("delete");
