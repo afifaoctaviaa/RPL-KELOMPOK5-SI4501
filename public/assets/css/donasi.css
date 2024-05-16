@@ -3,7 +3,6 @@
 }
 
 
-
 #donasi #hero {
     height: 350px;
     background-image: url('../img/hero.png');
@@ -47,4 +46,3 @@
     border-color: var(--hijau-muda);
     box-shadow: 0 0 0 0.2rem var(--hijau-muda);
 }
-
