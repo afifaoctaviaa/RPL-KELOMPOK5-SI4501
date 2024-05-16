@@ -36,7 +36,6 @@ if (isset($_GET['jumlah_barang'])) {
 
     <x-navbar></x-navbar>
 
-
     {{-- Hero Section --}}
     <section id="hero">
         <div class="container">

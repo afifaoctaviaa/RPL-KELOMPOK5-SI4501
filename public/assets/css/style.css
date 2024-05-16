@@ -92,6 +92,32 @@
 }
 
 
+#form {
+    padding: 40px 0px;
+}
+
+#form .form-group {
+    padding-bottom: 10px;
+}
+
+#form .form-group label {
+    color: #D7C39D;
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+#form .line {
+    background-color: var(--white-accent);
+    height: 2px;
+    margin: 50px 0px;
+}
+
+.form-control:focus {
+    border-color: var(--hijau-muda);
+    box-shadow: 0 0 0 0.2rem var(--hijau-muda);
+}
+
 @media (max-width: 991.98px) { 
 
     .navbar .navbar-nav {
