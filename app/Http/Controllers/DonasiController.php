@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Donasi;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class DonasiController extends Controller
@@ -25,7 +24,7 @@ class DonasiController extends Controller
             $request->file('foto_barang')[$i]->move($path, $filename);
 
             Donasi::create([
-                'user_id' => $request->user()->id,
+                'user_id' => 1,
                 'nama_barang' => $request->nama_barang[$i],
                 'kategori_barang' => $request->kategori_barang[$i],
                 'detail_barang' => $request->detail_barang[$i],
@@ -35,20 +34,5 @@ class DonasiController extends Controller
 
         return redirect('/tambah-donasi')->with('status', 'Berhasil menambahkan donasi barang!');
 
-    }
-
-    public function showdonasi(){
-
-
-        $riwayat = Donasi::where('user_id', Auth::user()->id)->get();
-        return view('donasi.riwayatdonasi', compact('riwayat'));
-
-    }
-
-    public function deletedonasi($id){
-        $deletedonasi = Donasi::find($id);
-        $deletedonasi->delete();
-        session()->flash('deletedMessage', 'Data Deleted Succesfully');
-        return redirect('/riwayat-donasi');
     }
 }
