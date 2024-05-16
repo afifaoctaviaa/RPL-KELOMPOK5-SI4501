@@ -9,6 +9,7 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BagiBarang | Dashboard</title>
@@ -20,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
+
 </head>
 <style>
     span {
@@ -122,7 +124,9 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <h3 class="mb-0">Artikel</h3>
                         <p class="mb-auto">Berita Tentang Bantuan Kemanusiaan dapat lihat disini</p>
+
                         <a href="{{ url('/show-artikel') }}"
+
                             class="icon-link gap-1 icon-link-hover stretched-link text-light">
                             Artikel
                             <svg class="bi">
