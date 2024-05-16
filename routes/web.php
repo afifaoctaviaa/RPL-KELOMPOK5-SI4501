@@ -15,8 +15,10 @@ Route::get('/tambah-donasi', function () {
     return view('donasi.tambah-donasi');
 });
 
-Route::get('/', function () {
-    return view('landingpage');
+
+
+Route::get('/tambah-donasi', function () {
+    return view('donasi.tambah-donasi');
 });
 
 Route::get('/kebijakanprivasi', function () {
@@ -63,6 +65,3 @@ Route::delete('/artikel/{id}', [Artikelcontroller::class, 'destroy'])->middlewar
 
 Route::get('/reviews', [App\Http\Controllers\ReviewController::class, 'index'])->name('reviews.index');
 Route::post('/reviews', [App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store');
-
-
-

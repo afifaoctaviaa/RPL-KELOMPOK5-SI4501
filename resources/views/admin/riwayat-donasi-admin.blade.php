@@ -6,10 +6,18 @@
 @include('layout.main-layout')
 
 <div class="table-responsive small ms-3 mt-3">
+        @if (session('message'))
+            <div class="alert alert-success">
+              {{ session('message') }}
+            </div>
+        @endif
+
         <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th scope="col">ID</th>
+              <th scope="col">UserID</th>
+
               <th scope="col">Nama Barang</th>
               <th scope="col">Kategori Barang</th>
               <th scope="col">Detail Barang</th>
@@ -17,16 +25,17 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($donasi as $donasi)
+            @foreach ($donasis as $item)
             <tr>
-              <td>{{ $donasi -> id}}</td>
-              <td>{{ $donasi -> nama_barang}}</td>
-              <td>{{ $donasi -> kategori_barang}}</td>
-              <td>{{ $donasi -> detail_barang}}</td>
+              <td>{{ $item -> id}}</td>
+              <td>{{ $item -> user_id}}</td>
+              <td>{{ $item -> nama_barang}}</td>
+              <td>{{ $item -> kategori_barang}}</td>
+              <td>{{ $item -> detail_barang}}</td>
               <td>
-              @if ($donasi->status == 'APPROVED')
+              @if ($item->status == 'APPROVED')
                 <i class="fw-bolder text-success">APPROVED</i> 
-              @elseif ($donasi->status == 'REJECT')
+              @elseif ($item->status == 'REJECT')
                 <i class="fw-bolder text-danger">REJECTED</i>
               @else
                 <i class="fw-bolder text-secondary">PENDING</i>
@@ -34,7 +43,9 @@
               </td>
               <td>
               <div class="btn-group">
-                <a href="{{ url('/riwayat-donasi-admin/change-status'.$donasi->id)}}" class="btn btn-primary">Change Status</a>
+                @if($item->status == 'PENDING')
+                <a href="{{ url('/verifikasi-update').'/'.$item->id }}" class="btn btn-primary">Change Status</a>
+                @endif
               </div>
               </td>
             </tr>
