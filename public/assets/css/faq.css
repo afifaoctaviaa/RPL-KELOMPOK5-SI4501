@@ -1,0 +1,54 @@
+.header{
+    width: 100%;
+    height: 459px;
+    background-image:url('../img/header.png') ;
+    position: absolute;
+}
+
+span, a, p{
+    color: #D7C39D;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: #F0EBCE;
+}
+
+.dropdown{
+    margin-top: 33rem;
+    margin-bottom: 15rem;
+}
+
+button.accordion-button{
+    background-color: #4E6C50;
+    color: white !important;
+}
+.accordion-button:not(.collapsed){
+    background-color: #4E6C50;
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button::after, button.accordion-button.collapsed::after  {
+    color: white;
+}
+
+.show, .collapsing{
+    background-color: #F0EBCE;
+}
+
+.accordion-item{
+    margin-bottom: 30px;
+}
+
+
+
