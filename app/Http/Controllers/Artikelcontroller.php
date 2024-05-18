@@ -85,20 +85,4 @@ class Artikelcontroller extends Controller
         $article->delete();
         return redirect('/artikel')->with('status', 'Artikel berhasil dihapus!');
     }
-
-    //* USER BACA ARTIKEL 
-
-    public function showArtikel() 
-    {
-        $data_artikel = Article::all();
-        return view('bacaartikel.show-artikel', compact('data_artikel'));
-    }
-
-    public function detailArtikel(Request $request) 
-    {
-        $data_article = Article::find($request->id);
-        return view('bacaartikel.detail-artikel', [
-            'artikel' => $data_article
-        ]);
-    }
 }

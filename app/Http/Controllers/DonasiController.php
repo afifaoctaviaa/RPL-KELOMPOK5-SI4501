@@ -39,10 +39,9 @@ class DonasiController extends Controller
 
     public function showdonasi(){
 
-
-        $riwayat = Donasi::where('user_id', Auth::user()->id)->get();
-        return view('donasi.riwayatdonasi', compact('riwayat'));
-
+        return view ('donasi.riwayatdonasi',[
+            'donasis' => Donasi::all()
+        ]);
     }
 
     public function deletedonasi($id){
