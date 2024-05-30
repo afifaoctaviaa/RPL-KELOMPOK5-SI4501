@@ -16,8 +16,8 @@ Route::get('/tambah-donasi', function () {
     return view('donasi.tambah-donasi');
 });
 
-Route::get('/', function () {
-    return view('landingpage');
+Route::get('/tambah-donasi', function () {
+    return view('donasi.tambah-donasi');
 });
 
 
