@@ -20,7 +20,11 @@
           <tbody>
             @foreach ($riwayat as $donasi)
             <tr>
+<<<<<<< HEAD
               <td>{{ $donasi -> id}}</td>
+=======
+              <td>{{ $donasi -> user_id}}</td>
+>>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
               <td>{{ $donasi -> nama_barang}}</td>
               <td>{{ $donasi -> kategori_barang}}</td>
               <td>{{ $donasi -> detail_barang}}</td>

@@ -10,7 +10,11 @@
         <div class="col p-4 d-flex flex-column position-static">
           <h3 class="mb-0">Jumlah User</h3>
           <p class="card-text mb-auto mt-2"></p>
+<<<<<<< HEAD
           <a href="/manageuser" class="icon-link gap-1 icon-link-hover stretched-link ">
+=======
+          <a href="/donasi" class="icon-link gap-1 icon-link-hover stretched-link ">
+>>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
             Check Sekarang
             <svg class="bi"><use xlink:href="#chevron-right"/></svg>
           </a>
@@ -42,6 +46,7 @@
             </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="col-md-3">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style="background-color: #A8DADC;">
           <div class="col p-4 d-flex flex-column position-static">
@@ -54,6 +59,8 @@
           </div>
     </div>
   </div>
+=======
+>>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
 </div>
 <!-- Artikel -->
 <div class="row mb-2">
