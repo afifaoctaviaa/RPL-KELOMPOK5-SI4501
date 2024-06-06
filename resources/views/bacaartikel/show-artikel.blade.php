@@ -13,7 +13,7 @@
 
       <div class="row">
         @foreach ($data_artikel as $artikel)
-          <div class="col-md-3 mb-4">
+          <div class="col-md-3 mb-4"> 
               <div class="card p-3">
                   <img src="{{ asset('storage/artikel/'. $artikel->photo) }}" class="card-img-top my-4" alt="Article Image" width="180" height="160">
                   <div class="card-body">

@@ -14,7 +14,7 @@
             Check Sekarang
             <svg class="bi"><use xlink:href="#chevron-right"/></svg>
           </a>
-        </div>
+        </div> 
     
       </div>
     </div>

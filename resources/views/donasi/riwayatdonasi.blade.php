@@ -14,7 +14,7 @@
               <th scope="col">Kategori Barang</th>
               <th scope="col">Detail Barang</th>
               <th scope="col">Status Barang</th>
-              <th scope="col">Action</th>
+              <th scope="col">Action</th> 
             </tr>
           </thead>
           <tbody>

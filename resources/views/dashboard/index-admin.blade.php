@@ -16,7 +16,7 @@
                         <svg class="bi">
                             <use xlink:href="#chevron-right" />
                         </svg>
-                    </a>
+                    </a> 
                 </div>
 
             </div>

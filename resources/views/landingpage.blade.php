@@ -14,7 +14,7 @@
     background: url('images/image 1.png');
 }
   </style>
-
+ 
   <body>
     <span class="d-block p-5">
         <p class="fs-4 fw-bolder ms-2"style="color:#AA8B56">Bagi Barang</p>

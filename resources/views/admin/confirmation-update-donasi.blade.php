@@ -11,7 +11,7 @@
             <form action="{{ url('/verifikasi-update') . '/' . $verif->id }}" method="post">
                 @csrf
                 @method('put')
-                <div class="card">
+                <div class="card"> 
                     <div class="card-header">Donasi
                         <div class="card-body">
                             <h5 class="card-tittle">ID : {{ $verif->id }}</h5>

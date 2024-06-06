@@ -15,7 +15,7 @@
             <div class="card-body">
                 <h1 class="card-title text-center">ADD FAQ</h1><br>
                 <form action="{{ route('updateDataFaq', $updateFaq->id) }}" method="post">
-                @csrf
+                @csrf  
                 <div class="mb-3">
                     <label for="Header" class="form-label">Add Header</label>
                     <input type="text" class="form-control" id="Header" aria-describedby="emailHelp" name="Header" value="{{$updateFaq->Header}}">

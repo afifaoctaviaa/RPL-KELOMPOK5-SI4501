@@ -14,7 +14,7 @@
 <div class="table-responsive sm  ms-3 mt-3">
     <table class="table table-striped table-sm">
         <thead>
-            <tr>
+            <tr> 
                 <th>ID</th>
                 <th>User_ID</th>
                 <th>Name</th>

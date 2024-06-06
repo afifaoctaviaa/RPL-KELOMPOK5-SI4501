@@ -15,6 +15,6 @@
             <li><strong>Status:</strong> {{ $mitras->status }}</li>
         </ul>
         <a href="{{ route('mitra.index') }}" class="btn btn-primary">Kembali</a>
-    </div>
+    </div> 
 </div>
 @endsection

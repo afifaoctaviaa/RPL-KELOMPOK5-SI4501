@@ -5,7 +5,7 @@
 @section('content')
 @include('layout.main-layout')
 
-{{-- Hero Section --}}
+{{-- Hero Section --}} 
 <section id="hero">
     <div class="container">
         <div class="row">

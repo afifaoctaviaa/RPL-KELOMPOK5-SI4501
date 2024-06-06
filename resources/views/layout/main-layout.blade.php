@@ -16,7 +16,7 @@
                         <div class="dropdown">
                             <button class="btn dropdown-toggle text-light" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Pengaturan
+                                Pengaturan 
                             </button>
                             <ul class="dropdown-menu">
                                 @if (Auth::user()->full_name == 'admin')

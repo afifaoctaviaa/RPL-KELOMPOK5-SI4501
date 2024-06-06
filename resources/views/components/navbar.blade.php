@@ -14,7 +14,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ url('/dashboard') }}">Donasi Sekarang</a>
-                </li>
+                </li> 
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Notifikasi</a>
                 </li>

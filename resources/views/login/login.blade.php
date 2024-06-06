@@ -14,7 +14,7 @@
 </style>
   <body>
     <div class="container overflow-hidden">
-        <div class="row gx-5">
+        <div class="row gx-5"> 
             <div class="col">
                 <div class="p-5 mt-5 fs-1 fw-bolder"style="color:#F0EBCE">Setiap Donasi<br>membawa Perubahaan</div>
             </div>

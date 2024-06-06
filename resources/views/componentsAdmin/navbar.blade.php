@@ -16,7 +16,7 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Donasi Sekarang</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item"> 
                     <a class="nav-link" aria-current="page" href="#">Notifikasi</a>
                 </li>
                 <div class="nav-item">
