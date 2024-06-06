@@ -21,9 +21,7 @@ class RegisterController extends Controller
             'telpon'=> 'required',
             'password'=> 'required|min:3' 
         ]);
-
         $validate['password'] = Hash::make($validate['password']);
-
         User::create($validate);
         return redirect('/login')->with('success', 'Registrasi Berhasil! Login Sekarang');
     }
