@@ -1,10 +1,9 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateMitrasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +14,18 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone');
-            $table->string('alamat');
+            $table->string('nama_organisasi');
+            $table->string('alamat_organisasi');
+            $table->string('telepon_organisasi');
+            $table->string('email_organisasi')->unique();
+            $table->string('website_organisasi')->nullable();
+            $table->string('nama_kontak_person');
+            $table->string('jabatan_kontak_person');
+            $table->string('telepon_kontak_person');
+            $table->string('email_kontak_person');
+            $table->string('dokumen_legalitas'); // Menyimpan nama file dokumen legalitas
+            $table->string('proposal_program');
+            $table->string('laporan_keuangan');
             $table->string('status')->default('pending'); // status bisa 'pending', 'approved', 'rejected'
             $table->timestamps();
         });
@@ -31,4 +38,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('mitras');
     }
-};
+}

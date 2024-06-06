@@ -1,10 +1,6 @@
 <?php
 
 use App\Http\Controllers\Artikelcontroller;
-<<<<<<< HEAD
-=======
-use Illuminate\Support\Facades\Route;
->>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DonasiController;
 use App\Http\Controllers\RegisterController;
@@ -20,24 +16,8 @@ Route::get('/tambah-donasi', function () {
     return view('donasi.tambah-donasi');
 });
 
-use App\Http\Controllers\ArtikelControllerAdmin;
-use App\Http\Controllers\ConfirmationController;
-use App\Http\Controllers\NotificationController;
-
-Route::get('/tambah-donasi', function () {
-    return view('donasi.tambah-donasi');
-});
-
-
-
-Route::get('/tambah-donasi', function () {
-    return view('donasi.tambah-donasi');
-});
-
-
-
-Route::get('/tambah-donasi', function () {
-    return view('donasi.tambah-donasi');
+Route::get('/', function () {
+    return view('landingpage');
 });
 
 
@@ -88,19 +68,12 @@ Route::post('/artikel/tambah', [Artikelcontroller::class, 'store'])->middleware(
 Route::get('/artikel/edit/{slug}', [Artikelcontroller::class, 'edit'])->middleware('auth');
 Route::patch('/artikel/edit/{slug}', [Artikelcontroller::class, 'update'])->middleware('auth');
 Route::delete('/artikel/{id}', [Artikelcontroller::class, 'destroy'])->middleware('auth');
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
 // Notifikasi
 Route::get('/notifikasi', [NotificationController::class, 'index']);
 
 //User Baca Artikel
 Route::get('/show-artikel', [Artikelcontroller::class, 'showArtikel']);
 Route::get('/show-artikel/{id}', [Artikelcontroller::class, 'detailArtikel']);
-<<<<<<< HEAD
 
 //Manage User
 Route::resource('manageuser', ManageUserController::class);
@@ -108,10 +81,14 @@ Route::resource('manageuser', ManageUserController::class);
 //Approval Mitra
 Route::resource('mitra', MitraApprovalController::class);
 
-//Pengajuan Mitra
-Route::resource('pengajuanmitra', MitraController::class);
 
+// Menampilkan daftar pengajuan mitra
+Route::get('pengajuanmitra', [MitraController::class, 'index'])->name('pengajuanmitra.index');
+Route::get('pengajuanmitra/create', [MitraController::class, 'create'])->name('pengajuanmitra.create');
+Route::post('pengajuanmitra', [MitraController::class, 'store'])->name('pengajuanmitra.store');
+Route::get('pengajuanmitra/{id}', [MitraController::class, 'show'])->name('pengajuanmitra.show');
+Route::get('pengajuanmitra/{id}/edit', [MitraController::class, 'edit'])->name('pengajuanmitra.edit');
+Route::put('pengajuanmitra/{id}', [MitraController::class, 'update'])->name('pengajuanmitra.update');
+Route::delete('pengajuanmitra/{id}', [MitraController::class, 'destroy'])->name('pengajuanmitra.destroy');
 
-=======
->>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
 

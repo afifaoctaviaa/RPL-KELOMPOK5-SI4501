@@ -218,15 +218,7 @@
             <div class="col-md-4">
                 <div class="position-sticky" style="top: 2rem;">
                     <div class="p-4 mb-3 rounded" style="background-color:#F0EBCE">
-<<<<<<< HEAD
                         <a href="/pengajuanmitra" class="fst-italic">Pengajuan Mitra</a>
-=======
-                        <h4 class="fst-italic">Royalti</h4>
-                        <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar w-75"></div>
-                        </div>
->>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
                     </div>
                     <!-- Notifikasi -->
                     <div>

@@ -86,10 +86,6 @@ class Artikelcontroller extends Controller
         return redirect('/artikel')->with('status', 'Artikel berhasil dihapus!');
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
     //* USER BACA ARTIKEL 
 
     public function showArtikel() 
@@ -105,8 +101,4 @@ class Artikelcontroller extends Controller
             'artikel' => $data_article
         ]);
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
 }

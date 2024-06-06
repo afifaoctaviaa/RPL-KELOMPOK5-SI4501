@@ -17,10 +17,6 @@
             <tr>
               <th scope="col">ID</th>
               <th scope="col">UserID</th>
-<<<<<<< HEAD
-=======
-
->>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
               <th scope="col">Nama Barang</th>
               <th scope="col">Kategori Barang</th>
               <th scope="col">Detail Barang</th>

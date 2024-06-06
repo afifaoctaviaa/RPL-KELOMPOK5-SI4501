@@ -19,15 +19,11 @@
                                 Pengaturan
                             </button>
                             <ul class="dropdown-menu">
-<<<<<<< HEAD
                                 @if (Auth::user()->full_name == 'admin')
                                 <li><a class="dropdown-item" href="/dashboardadmin">My Dashboard</a></li>
                                 @else
                                 <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
                                 @endif
-=======
-                                <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
->>>>>>> f866f81bfdd6374f258b96948ef7924e5d3aba06
                                 <hr>
                                 <li><a class="dropdown-item" href="#">Edit Profil</a></li>
                                 <hr>
