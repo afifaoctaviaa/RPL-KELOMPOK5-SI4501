@@ -10,6 +10,9 @@
           <thead>
             <tr>
               <th scope="col">ID</th>
+
+              <th scope="col">UserID</th>
+
               <th scope="col">Nama Barang</th>
               <th scope="col">Kategori Barang</th>
               <th scope="col">Detail Barang</th>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('kategori_barang');
             $table->string('detail_barang');
             $table->string('foto_barang');
+            $table->string('status')->default('PENDING');
             $table->timestamps();
         });
     }
