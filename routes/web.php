@@ -4,6 +4,7 @@ use App\Http\Controllers\Artikelcontroller;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DonasiController;
+use App\Http\Controllers\DonasiController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ArtikelControllerAdmin;
@@ -46,7 +47,11 @@ Route::get('/tentangkami', function () {
 });
 //Rute Registrasi
 Route::get('/registrasi', [RegisterController::class, 'register'])->middleware('guest');
+//Rute Registrasi
+Route::get('/registrasi', [RegisterController::class, 'register'])->middleware('guest');
 Route::post('/registrasi', [RegisterController::class, 'store']);
+//Rute Login & Logout
+Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 //Rute Login & Logout
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
