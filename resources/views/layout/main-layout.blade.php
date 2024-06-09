@@ -11,7 +11,7 @@
                     <div class="navbar-nav">
                         <a class="nav-link active" style="color:#F0EBCE" aria-current="page" href="/tentangkami">Tentang
                             Kami</a>
-                        <a class="nav-link active" style="color:#F0EBCE" href="/login">Donasi Sekarang</a>
+                        <a class="nav-link active" style="color:#F0EBCE" href="/">Donasi Sekarang</a>
                         <a class="nav-link active" style="color:#F0EBCE" href="#">Notifikasi</a>
                         <div class="dropdown">
                             <button class="btn dropdown-toggle text-light" type="button" data-bs-toggle="dropdown"
@@ -25,7 +25,7 @@
                                 <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
                                 @endif
                                 <hr>
-                                <li><a class="dropdown-item" href="#">Edit Profil</a></li>
+                                <li><a class="dropdown-item" href="/profile">Edit Profil</a></li>
                                 <hr>
                                 <form action="/logout" method="post">
                                     @csrf
@@ -50,7 +50,8 @@
                                             href="/tentangkami">Tentang Kami</a>
                                         <a class="nav-link active" style="color:#F0EBCE" href="/login">Donasi Sekarang</a>
                                         <a class="nav-link active" style="color:#F0EBCE" href="#">Notifikasi</a>
-                                        <a class="nav-link active text-black  p-1 mb-1 bg-warning" href="/registrasi">Daftar
+                                        <a class="nav-link active   p-1 mb-1  mx-2 px-4 btn text-light" style="background-color:#AA8B56;"  href="/login">Login </a>
+                                        <a class="nav-link active text-light btn p-1 px-2 mb-1 mx-2 bg-secondary" href="/registrasi">Daftar
                                             Sekarang</a>
                                     @endauth
                                 </div>

@@ -1,55 +1,55 @@
 @extends('layout.template-layout')
 
-@section('tittle', 'BagiBarang | Approval Mitra')
+@section('title', 'BagiBarang | Approval Mitra')
 
 @section('content')
 @include('layout.main-layout')
 
 <h1>Mitra Approval</h1>
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-<div class="table-responsive sm  ms-3 mt-3">
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+<div class="table-responsive sm ms-3 mt-3">
     <table class="table table-striped table-sm">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>User_ID</th>
-                <th>Name</th>
+                <th>Nama Organisasi</th>
+                <th>Nama Kontak Person</th>
+                <th>Telepon</th>
                 <th>Email</th>
-                <th>Phone</th>
                 <th>Alamat</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($mitras as $mitra)
+            @foreach ($pengajuans as $pengajuan)
                 <tr>
-                    <td>{{ $mitra->id }}</td>
-                    <td>{{ $mitra->user_id }}</td>
-                    <td>{{ $mitra->name }}</td>
-                    <td>{{ $mitra->email }}</td>
-                    <td>{{ $mitra->phone }}</td>
-                    <td>{{ $mitra->alamat }}</td>
-                    <td>{{ $mitra->status }}</td>
+                    <td>{{ $pengajuan->id }}</td>
+                    <td>{{ $pengajuan->nama_organisasi }}</td>
+                    <td>{{ $pengajuan->nama_kontak_person }}</td>
+                    <td>{{ $pengajuan->telepon_kontak_person }}</td>
+                    <td>{{ $pengajuan->email_kontak_person }}</td>
+                    <td>{{ $pengajuan->alamat_organisasi }}</td>
+                    <td>{{ $pengajuan->status }}</td>
                     <td>
-                        <a href="{{ route('mitra.show', $mitra->id) }}" class="btn btn-primary">Show</a>
-                        <form action="{{ route('mitra.update', $mitra->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('mitra.show', $pengajuan->id) }}" class="btn btn-primary">Show</a>
+                        <form action="{{ route('mitra.update', $pengajuan->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('PUT')
-                            <input type="hidden" name="action" value="approve">
+                            <input type="hidden" name="status" value="approved">
                             <button type="submit" class="btn btn-success">Approve</button>
                         </form>
-                        <form action="{{ route('mitra.update', $mitra->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('mitra.update', $pengajuan->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('PUT')
-                            <input type="hidden" name="action" value="reject">
+                            <input type="hidden" name="status" value="rejected">
                             <button type="submit" class="btn btn-warning">Reject</button>
                         </form>
-                        <form action="{{ route('mitra.destroy', $mitra->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('mitra.destroy', $pengajuan->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger">Delete</button>

@@ -24,6 +24,15 @@
     </section>
     {{-- End Hero Section --}}
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     {{-- Form Section --}}
     <section id="form">
         <div class="container">
@@ -63,23 +72,23 @@
                             <h2>Informasi Umum</h2>
                             <div class="form-group">
                                 <label>Nama Organisasi:</label>
-                                <input type="text" class="form-control" name="nama_organisasi" required>
+                                <input type="text" class="form-control" name="nama_organisasi" value="{{ old('nama_organisasi') }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Alamat Organisasi:</label>
-                                <input type="text" class="form-control" name="alamat_organisasi" required>
+                                <input type="text" class="form-control" name="alamat_organisasi" value="{{ old('alamat_organisasi') }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Nomor Telepon Organisasi:</label>
-                                <input type="text" class="form-control" name="telepon_organisasi" required>
+                                <input type="text" class="form-control" name="telepon_organisasi" value="{{ old('telepon_organisasi') }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Email Organisasi:</label>
-                                <input type="email" class="form-control" name="email_organisasi" required>
+                                <input type="email" class="form-control" name="email_organisasi" value="{{ old('email_organisasi') }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Website Organisasi:</label>
-                                <input type="text" class="form-control" name="website_organisasi">
+                                <input type="text" class="form-control" name="website_organisasi" value="{{ old('website_organisasi') }}">
                             </div>
                         </div>
                     </div>
@@ -97,19 +106,19 @@
                             <h2>Informasi Kontak</h2>
                             <div class="form-group">
                                 <label>Nama Kontak Person:</label>
-                                <input type="text" class="form-control" name="nama_kontak_person" required>
+                                <input type="text" class="form-control" name="nama_kontak_person" value="{{ old('nama_kontak_person') }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Jabatan Kontak Person:</label>
-                                <input type="text" class="form-control" name="jabatan_kontak_person" required>
+                                <input type="text" class="form-control" name="jabatan_kontak_person" value="{{ old('jabatan_kontak_person') }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Nomor Telepon Kontak Person:</label>
-                                <input type="text" class="form-control" name="telepon_kontak_person" required>
+                                <input type="text" class="form-control" name="telepon_kontak_person" value="{{ old('telepon_kontak_person') }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Email Kontak Person:</label>
-                                <input type="email" class="form-control" name="email_kontak_person" required>
+                                <input type="email" class="form-control" name="email_kontak_person" value="{{ old('email_kontak_person') }}" required>
                             </div>
                         </div>
                     </div>
@@ -130,15 +139,19 @@
                             <h2>Dokumen Pendukung</h2>
                             <div class="form-group">
                                 <label>Dokumen Legalitas Organisasi:</label>
-                                <input type="file" class="form-control" name="dokumen_legalitas"  required>
+                                <input type="file" class="form-control" name="dokumen_legalitas" value="{{ old('dokumen_legalitas') }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Proposal Program:</label>
-                                <input type="file" class="form-control" name="proposal_program" required>
+                                <input type="file" class="form-control" name="proposal_program" value="{{ old('proposal_program') }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Laporan Keuangan Terbaru:</label>
-                                <input type="file" class="form-control" name="laporan_keuangan" required>
+                                <input type="file" class="form-control" name="laporan_keuangan" value="{{ old('laporan_keuangan') }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Foto Mitra:</label>
+                                <input type="file" class="form-control" name="foto_mitra" value="{{ old('foto_mitra') }}" required>
                             </div>
                         </div>
                     </div>

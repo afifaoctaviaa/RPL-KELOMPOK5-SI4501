@@ -60,7 +60,7 @@
                             <div class="invalid-feedback">{{$message}}</div>
                             @enderror
                         </div>
-                        <a type="button" class="btn btn-warning mt-3" href="/">Pelajari Lebih Lanjut</a>
+                        <a type="button" class="btn btn-warning mt-3" href="/kebijakanprivasi">Pelajari Lebih Lanjut</a>
                         <button type="submit" class="btn btn-primary mt-3 ms-2">Daftar Sekarang</button>
                     </form>
                 </div>

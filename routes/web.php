@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Artikelcontroller;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DonasiController;
 use App\Http\Controllers\RegisterController;
@@ -11,14 +12,18 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\MitraApprovalController;
 use App\Http\Controllers\MitraController;
+use App\Http\Controllers\faqController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ReviewAdminController;
+
 
 Route::get('/tambah-donasi', function () {
     return view('donasi.tambah-donasi');
 });
 
-Route::get('/', function () {
-    return view('landingpage');
-});
+Route::get('/',  [LandingPageController::class, 'index'])->name('landingpage');
+Route::get('/mitra/{id}',  [LandingPageController::class, 'mitra'])->name('mitra');
 
 
 
@@ -91,4 +96,26 @@ Route::get('pengajuanmitra/{id}/edit', [MitraController::class, 'edit'])->name('
 Route::put('pengajuanmitra/{id}', [MitraController::class, 'update'])->name('pengajuanmitra.update');
 Route::delete('pengajuanmitra/{id}', [MitraController::class, 'destroy'])->name('pengajuanmitra.destroy');
 
+// Menampilkan Manage FAQ dan FAQ User
+Route::get('/faq', [faqController::class, 'faqView'])->name('faq');
+Route::get('/manageFaq', [faqController::class, 'manageFaq'])->name('manageFaq');
+Route::get('/addFaqPage', [faqController::class, 'addFaqPage'])->name('addFaqPage');
+Route::post('/addFaq', [faqController::class, 'addFaq'])->name('addFaq');
+Route::get('/updateFaq/{id}', [faqController::class, 'updateFaq'])->name('updateFaq');
+Route::post('/updateDataFaq/{id}', [faqController::class, 'update'])->name('updateDataFaq');
+Route::get('/delete-faq/{id}', [faqController::class, 'delete'])->name("delete");
 
+//Menampilkan Profil
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
+Route::post('/profile', [ProfileController::class, 'update'])->middleware('auth');
+
+// Review User
+Route::get('/reviews', [App\Http\Controllers\ReviewController::class, 'index'])->name('reviews.index');
+Route::post('/reviews', [App\Http\Controllers\ReviewController::class, 'store'])->name('reviews.store');
+
+// Definisikan rute untuk fitur review admin
+
+// Route untuk menampilkan halaman daftar review admin
+Route::get('/admin/reviews', [ReviewAdminController::class, 'index'])->name('admin.reviews.index');
+
+Route::delete('/admin/reviews/{id}', [ReviewAdminController::class, 'destroy'])->name('admin.reviews.destroy');

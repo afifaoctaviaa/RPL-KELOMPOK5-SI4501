@@ -12,67 +12,36 @@ class MitraApprovalController extends Controller
      */
     public function index()
     {
-        $mitras = Mitra::all();
-        return view('approvalmitra.index', compact('mitras'));
+        $pengajuans = Mitra::all();
+        return view('approvalmitra.index', compact('pengajuans'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
+     * Show the form for approving or rejecting a specific resource.
      */
     public function show(string $id)
     {
-        $mitras = Mitra::findOrFail($id);
-        return view('approvalmitra.show', compact('mitras'));
+        $pengajuan = Mitra::findOrFail($id);
+        return view('mitra.show', compact('pengajuan'));
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * Update the status of the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        $mitra = Mitra::findOrFail($id);
-        if ($request->input('action') == 'approve') {
-            $mitra->status = 'approved';
-        } else if ($request->input('action') == 'reject') {
-            $mitra->status = 'rejected';
-        }
-        $mitra->save();
+        $request->validate([
+            'status' => 'required|in:approved,rejected',
+            'approval_notes' => 'nullable|string|max:255',
+        ]);
 
-        return redirect()->route('mitra.index')->with('success', 'Mitra status updated successfully.');
-    }
+        $pengajuan = Mitra::findOrFail($id);
+        $pengajuan->update([
+            'status' => $request->status,
+            'approval_notes' => $request->approval_notes,
+        ]);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        $mitra = Mitra::findOrFail($id);
-        $mitra->delete();
-
-        return redirect()->route('mitra.index')->with('success', 'Mitra deleted successfully.');
+        return redirect()->route('mitra.index')
+                         ->with('success', 'Status pengajuan mitra berhasil diperbarui.');
     }
 }
