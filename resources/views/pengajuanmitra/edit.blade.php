@@ -26,10 +26,33 @@
 
 <section id="form">
     <div class="container">
-        <form action="{{ route('pengajuanmitra.update', $pengajuans->id) }}" method="POST" enctype="multipart/form-data">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form action="{{ route('pengajuanmitra.update', $pengajuans->id) }}" method="POST"
+            enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="row">
+                <div class="row mb-4">
+                    <div class="col-12 text-center">
+                        <img src="{{ asset('storage/foto_mitra/' . $pengajuans->foto_mitra) }}" alt="Foto Mitra"
+                            class="img-fluid" style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="form-group">
+                        <label>foto mitra:</label>
+                        <input type="file" name="foto_mitra" class="form-control">
+
+                    </div>
+                </div>
+
                 {{-- Informasi Umum --}}
                 <div class="col-md-6">
                     <div class="slide w-1/2">
@@ -38,23 +61,28 @@
                                 <h2>Informasi Umum</h2>
                                 <div class="form-group">
                                     <label>Nama Organisasi:</label>
-                                    <input type="text" name="nama_organisasi" class="form-control" value="{{ $pengajuans->nama_organisasi }}" required>
+                                    <input type="text" name="nama_organisasi" class="form-control"
+                                        value="{{ $pengajuans->nama_organisasi }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Alamat Organisasi:</label>
-                                    <input type="text" name="alamat_organisasi" class="form-control" value="{{ $pengajuans->alamat_organisasi }}" required>
+                                    <input type="text" name="alamat_organisasi" class="form-control"
+                                        value="{{ $pengajuans->alamat_organisasi }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor Telepon Organisasi:</label>
-                                    <input type="text" name="telepon_organisasi" class="form-control" value="{{ $pengajuans->telepon_organisasi }}" required>
+                                    <input type="text" name="telepon_organisasi" class="form-control"
+                                        value="{{ $pengajuans->telepon_organisasi }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Email Organisasi:</label>
-                                    <input type="email" name="email_organisasi" class="form-control" value="{{ $pengajuans->email_organisasi }}" required>
+                                    <input type="email" name="email_organisasi" class="form-control"
+                                        value="{{ $pengajuans->email_organisasi }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Website Organisasi:</label>
-                                    <input type="text" name="website_organisasi" class="form-control" value="{{ $pengajuans->website_organisasi }}">
+                                    <input type="text" name="website_organisasi" class="form-control"
+                                        value="{{ $pengajuans->website_organisasi }}">
                                 </div>
                             </div>
                         </div>
@@ -69,19 +97,23 @@
                                 <h2>Informasi Kontak</h2>
                                 <div class="form-group">
                                     <label>Nama Kontak Person:</label>
-                                    <input type="text" name="nama_kontak_person" class="form-control" value="{{ $pengajuans->nama_kontak_person }}" required>
+                                    <input type="text" name="nama_kontak_person" class="form-control"
+                                        value="{{ $pengajuans->nama_kontak_person }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Jabatan Kontak Person:</label>
-                                    <input type="text" name="jabatan_kontak_person" class="form-control" value="{{ $pengajuans->jabatan_kontak_person }}" required>
+                                    <input type="text" name="jabatan_kontak_person" class="form-control"
+                                        value="{{ $pengajuans->jabatan_kontak_person }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor Telepon Kontak Person:</label>
-                                    <input type="text" name="telepon_kontak_person" class="form-control" value="{{ $pengajuans->telepon_kontak_person }}" required>
+                                    <input type="text" name="telepon_kontak_person" class="form-control"
+                                        value="{{ $pengajuans->telepon_kontak_person }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Email Kontak Person:</label>
-                                    <input type="email" name="email_kontak_person" class="form-control" value="{{ $pengajuans->email_kontak_person }}" required>
+                                    <input type="email" name="email_kontak_person" class="form-control"
+                                        value="{{ $pengajuans->email_kontak_person }}" required>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +122,7 @@
             </div>
 
             <div class="line"></div>
-            
+
             {{-- Dokumen Pendukung --}}
             <div class="slide">
                 <div class="row">
@@ -99,17 +131,20 @@
                         <div class="form-group">
                             <label>Dokumen Legalitas Organisasi:</label>
                             <input type="file" name="dokumen_legalitas" class="form-control">
-                            <small>Current: <a href="{{ asset('storage/' . $pengajuans->dokumen_legalitas) }}" target="_blank">Lihat Dokumen</a></small>
+                            <small>Current: <a href="{{ asset('storage/' . $pengajuans->dokumen_legalitas) }}"
+                                    target="_blank">Lihat Dokumen</a></small>
                         </div>
                         <div class="form-group">
                             <label>Proposal Program:</label>
                             <input type="file" name="proposal_program" class="form-control">
-                            <small>Current: <a href="{{ asset('storage/' . $pengajuans->proposal_program) }}" target="_blank">Lihat Dokumen</a></small>
+                            <small>Current: <a href="{{ asset('storage/' . $pengajuans->proposal_program) }}"
+                                    target="_blank">Lihat Dokumen</a></small>
                         </div>
                         <div class="form-group">
                             <label>Laporan Keuangan Terbaru:</label>
                             <input type="file" name="laporan_keuangan" class="form-control">
-                            <small>Current: <a href="{{ asset('storage/' . $pengajuans->laporan_keuangan) }}" target="_blank">Lihat Dokumen</a></small>
+                            <small>Current: <a href="{{ asset('storage/' . $pengajuans->laporan_keuangan) }}"
+                                    target="_blank">Lihat Dokumen</a></small>
                         </div>
                     </div>
                 </div>

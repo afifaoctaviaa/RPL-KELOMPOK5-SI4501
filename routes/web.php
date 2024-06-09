@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Artikelcontroller;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DonasiController;
 use App\Http\Controllers\RegisterController;
@@ -16,9 +17,8 @@ Route::get('/tambah-donasi', function () {
     return view('donasi.tambah-donasi');
 });
 
-Route::get('/', function () {
-    return view('landingpage');
-});
+Route::get('/',  [LandingPageController::class, 'index'])->name('landingpage');
+Route::get('/mitra/{id}',  [LandingPageController::class, 'mitra'])->name('mitra');
 
 
 

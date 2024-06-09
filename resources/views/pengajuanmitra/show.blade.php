@@ -26,6 +26,11 @@
 
 <section id="form">
     <div class="container">
+    <div class="row mb-4">
+            <div class="col-12 text-center">
+                <img src="{{ asset('storage/foto_mitra/' . $pengajuans->foto_mitra) }}" alt="Foto Mitra" class="img-fluid" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
         <div class="row">
             {{-- Informasi Umum --}}
             <div class="col-md-6">
@@ -99,17 +104,17 @@
                     <h2>Dokumen Pendukung</h2>
                     <div class="form-group">
                         <label>Dokumen Legalitas Organisasi:</label>
-                        <a href="{{ asset('storage/' . $pengajuans->dokumen_legalitas) }}" target="_blank">Lihat
+                        <a href="{{ asset('storage/dokumen_legalitas/' . $pengajuans->dokumen_legalitas) }}" target="_blank">Lihat
                             Dokumen</a>
                     </div>
                     <div class="form-group">
                         <label>Proposal Program:</label>
-                        <a href="{{ asset('storage/' . $pengajuans->proposal_program) }}" target="_blank">Lihat
+                        <a href="{{ asset('storage/proposal_program/' . $pengajuans->proposal_program) }}" target="_blank">Lihat
                             Dokumen</a>
                     </div>
                     <div class="form-group">
                         <label>Laporan Keuangan Terbaru:</label>
-                        <a href="{{ asset('storage/' . $pengajuans->laporan_keuangan) }}" target="_blank">Lihat
+                        <a href="{{ asset('storage/laporan_keuangan/' . $pengajuans->laporan_keuangan) }}" target="_blank">Lihat
                             Dokumen</a>
                     </div>
                 </div>

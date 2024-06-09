@@ -48,7 +48,7 @@
                             </div>
                             <div class="form-group mt-3">
                                 <label for="password my-2">Password</label>
-                                <input id="password" class="form-control" type="text" name="password" required>
+                                <input id="password" class="form-control" type="password" name="password" required>
                             </div>
                             <div class="text-center mt-3">
                                 <button type="submit" class="btn btn-primary" style="width: 400px;">masuk</button>

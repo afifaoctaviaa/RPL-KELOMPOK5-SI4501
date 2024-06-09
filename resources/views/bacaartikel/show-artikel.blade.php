@@ -18,7 +18,7 @@
                   <img src="{{ asset('storage/artikel/'. $artikel->photo) }}" class="card-img-top my-4" alt="Article Image" width="180" height="160">
                   <div class="card-body">
                       <h5 class="card-title">{{ $artikel -> judul }}</h5>
-                      <p class="card-text">{{ Str::limit($artikel -> body, 100) }}</p>
+                      <p class="card-text">{!! Str::limit($artikel -> body, 100) !!}</p>
                       <p class="card-text">{{ $artikel -> sumber }}</p>
                       <a href="{{ url('/show-artikel/'. $artikel->id) }}" class="btn btn-primary">Read More</a>
                   </div>

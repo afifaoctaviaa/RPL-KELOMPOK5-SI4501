@@ -23,9 +23,10 @@ class CreateMitrasTable extends Migration
             $table->string('jabatan_kontak_person');
             $table->string('telepon_kontak_person');
             $table->string('email_kontak_person');
-            $table->string('dokumen_legalitas'); // Menyimpan nama file dokumen legalitas
-            $table->string('proposal_program');
-            $table->string('laporan_keuangan');
+            $table->string('dokumen_legalitas')->nullable();
+            $table->string('proposal_program')->nullable();
+            $table->string('laporan_keuangan')->nullable();
+            $table->string('foto_mitra')->nullable();
             $table->string('status')->default('pending'); // status bisa 'pending', 'approved', 'rejected'
             $table->timestamps();
         });
