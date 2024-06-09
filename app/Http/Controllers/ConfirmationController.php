@@ -8,7 +8,6 @@ use App\Models\Notification;
 use Illuminate\Support\Facades\Auth;
 
 
-
 class ConfirmationController extends Controller
 {   
     public function confirmation()
@@ -22,6 +21,7 @@ class ConfirmationController extends Controller
             'donasis' => Donasi::all()
         ]);
     }
+
 
 
 

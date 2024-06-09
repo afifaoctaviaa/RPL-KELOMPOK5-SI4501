@@ -1,8 +1,8 @@
+
 @include('layout.main-layout')
 @extends('layout.template-layout')
 
 @section('tittle', 'BagiBarang | Artikel')
-
 <!doctype html>
 <html lang="en">
 
@@ -31,6 +31,7 @@
 <body id="artikel">
 
     <!-- <x-navbar></x-navbar> -->
+
 
     <div class="container">
 

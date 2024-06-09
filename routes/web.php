@@ -17,6 +17,14 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ReviewAdminController;
 
+use App\Http\Controllers\ManageUserController;
+use App\Http\Controllers\MitraApprovalController;
+use App\Http\Controllers\MitraController;
+use App\Http\Controllers\faqController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ReviewAdminController;
+
 
 Route::get('/tambah-donasi', function () {
     return view('donasi.tambah-donasi');
@@ -59,14 +67,12 @@ Route::post('/tambah-donasi', [DonasiController::class, 'store'])->middleware('a
 Route::get('/riwayat-donasi', [DonasiController::class, 'showdonasi'])->middleware('auth');
 Route::get('/riwayat-donasi/delete/{id}', [DonasiController::class, 'deletedonasi'])->middleware('auth');
 //Route Donasi Admin
-
 Route::get('/verifikasi', [ConfirmationController::class, 'getdata'])->middleware('auth');
 Route::get('/verifikasi-update/{id}', [ConfirmationController::class, 'showdata'])->middleware('auth');
 Route::put('/verifikasi-update/{id}', [ConfirmationController::class, 'update'])->middleware('auth');
 
 
 //Artikel
-
 Route::get('/artikel', [Artikelcontroller::class, 'index'])->middleware('auth');
 Route::get('/artikel/tambah', [Artikelcontroller::class, 'create'])->middleware('auth');
 Route::post('/artikel/tambah', [Artikelcontroller::class, 'store'])->middleware('auth');

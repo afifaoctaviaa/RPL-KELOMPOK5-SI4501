@@ -6,22 +6,19 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
+
 <head>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BagiBarang | Dashboard</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
-
 </head>
 
 
@@ -134,8 +131,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
         <!-- Riwayat Donasi -->
         <div class="row g-5 ">
             <div class="col-md-8">
