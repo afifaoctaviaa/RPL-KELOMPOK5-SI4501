@@ -25,8 +25,6 @@ Route::get('/tambah-donasi', function () {
 Route::get('/',  [LandingPageController::class, 'index'])->name('landingpage');
 Route::get('/mitra/{id}',  [LandingPageController::class, 'mitra'])->name('mitra');
 
-
-
 Route::get('/tambah-donasi', function () {
     return view('donasi.tambah-donasi');
 });
@@ -59,14 +57,12 @@ Route::post('/tambah-donasi', [DonasiController::class, 'store'])->middleware('a
 Route::get('/riwayat-donasi', [DonasiController::class, 'showdonasi'])->middleware('auth');
 Route::get('/riwayat-donasi/delete/{id}', [DonasiController::class, 'deletedonasi'])->middleware('auth');
 //Route Donasi Admin
-
 Route::get('/verifikasi', [ConfirmationController::class, 'getdata'])->middleware('auth');
 Route::get('/verifikasi-update/{id}', [ConfirmationController::class, 'showdata'])->middleware('auth');
 Route::put('/verifikasi-update/{id}', [ConfirmationController::class, 'update'])->middleware('auth');
 
 
 //Artikel
-
 Route::get('/artikel', [Artikelcontroller::class, 'index'])->middleware('auth');
 Route::get('/artikel/tambah', [Artikelcontroller::class, 'create'])->middleware('auth');
 Route::post('/artikel/tambah', [Artikelcontroller::class, 'store'])->middleware('auth');
@@ -79,7 +75,6 @@ Route::get('/notifikasi', [NotificationController::class, 'index']);
 //User Baca Artikel
 Route::get('/show-artikel', [Artikelcontroller::class, 'showArtikel']);
 Route::get('/show-artikel/{id}', [Artikelcontroller::class, 'detailArtikel']);
-
 //Manage User
 Route::resource('manageuser', ManageUserController::class);
 
