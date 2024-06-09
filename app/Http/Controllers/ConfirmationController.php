@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Donasi;
+use App\Models\Notification;
+use Illuminate\Support\Facades\Auth;
+
 
 class ConfirmationController extends Controller
 {   
@@ -19,20 +22,31 @@ class ConfirmationController extends Controller
         ]);
     }
 
-    public function showdata()
+
+
+
+    public function showdata($id)
     {
-        $showdata = Donasi::all();
-        return view('admin.confirmation-update-donasi',['status_donasis'=>$showdata]);
+        $verif = Donasi::where('id', $id)->first();
+        return view('admin.confirmation-update-donasi', compact('verif'));
     }
 
     public function update(Request $request, $id){
-        $statusupdate = Donasi::find($id);
-        if ($request->has('approve')) {
-            $statusupdate->status = 'APPROVED';
-        } elseif ($request->has('reject')) {
-            $statusupdate->status = 'REJECT';
-        }
-        $statusupdate->update();
-        return redirect('admin.riwayat-donasi-admin')->with('message', 'Data updated Successfully');
+        $donasi = Donasi::find($id);
+        $donasi->status = $request->status;
+
+        $judul = "Donasi {$donasi->nama_barang} {$donasi->status} oleh pihak BagiBarang";
+        $desc = $donasi->status == "REJECT" ? "Anda dapat mengajukan kembali donasi barang yang ingin anda donasikan." : "Anda dapat mengirimkan barang yang akan didonasikan pada alamat berikut:";
+
+        Notification::create([
+            'user_id' => $donasi->user_id,
+            'judul' => $judul,
+            'description' => $desc,
+            'alamat' => $request->alamat
+        ]);
+
+        $donasi->update();
+
+        return redirect('/verifikasi')->with('message', 'Data updated Successfully');
     }
 }

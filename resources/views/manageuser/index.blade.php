@@ -4,9 +4,7 @@
 
 @section('content')
 @include('layout.main-layout')
-
-<h1 class="ms-4 mb-3">Manage User</h1
-    >
+<h1 class="ms-4 mb-3">Manage User</h1>
 
 <a href="{{ route('manageuser.create') }}" class="btn btn-primary ms-3">Create User</a><br>
 @if(Session::has('success'))
