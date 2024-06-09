@@ -9,7 +9,7 @@
 
 <div class="table-responsive small ms-4 mt-3">
         <table class="table table-striped table-sm">
-          <thead> 
+          <thead>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Judul Artikel</th>

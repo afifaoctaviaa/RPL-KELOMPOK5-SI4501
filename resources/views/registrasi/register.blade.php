@@ -13,7 +13,7 @@
     background: url('images/fotoLR.png');
 }
   </style>
- 
+
   <body>
     <div class="container overflow-hidden">
         <div class="row gx-5">

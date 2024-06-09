@@ -14,7 +14,7 @@
 </style>
   <body>
     <div class="container overflow-hidden">
-        <div class="row gx-5"> 
+        <div class="row gx-5">
             <div class="col">
                 <div class="p-5 mt-5 fs-1 fw-bolder"style="color:#F0EBCE">Setiap Donasi<br>membawa Perubahaan</div>
             </div>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="form-group mt-3">
                                 <label for="password my-2">Password</label>
-                                <input id="password" class="form-control" type="text" name="password" required>
+                                <input id="password" class="form-control" type="password" name="password" required>
                             </div>
                             <div class="text-center mt-3">
                                 <button type="submit" class="btn btn-primary" style="width: 400px;">masuk</button>

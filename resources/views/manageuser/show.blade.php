@@ -14,7 +14,7 @@
             <p>Username: {{ $user->username }}</p>
             <p>Telpon: {{ $user->telpon }}</p>
             <p>Email: {{ $user->email }}</p>
-        </div> 
+        </div>
     </div>
 </div><br>
 

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #395144;">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/dashboardadmin">
             <img src="{{ asset('assets/img/logo.svg') }}" alt="logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -11,12 +11,12 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Manage FAQ</a>
+                    <a class="nav-link" aria-current="page" href="/tentangkami">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Donasi Sekarang</a>
                 </li>
-                <li class="nav-item"> 
+                <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Notifikasi</a>
                 </li>
                 <div class="nav-item">

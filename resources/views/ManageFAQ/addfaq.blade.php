@@ -15,7 +15,7 @@
             <div class="card-body">
                 <h1 class="card-title text-center">ADD FAQ</h1><br>
                 <form action="{{ route('addFaq') }}" method="post">
-                @csrf 
+                @csrf
                 <div class="mb-3">
                     <label for="Header" class="form-label">Add Header</label>
                     <input type="text" class="form-control" id="Header" aria-describedby="emailHelp" name="Header">
@@ -32,7 +32,7 @@
                         <button type="submit" class="btn btn-success">Add FAQ</button>
                     </div>
                     <div class="p-2">
-                        <a class="btn btn-danger"href="#">kembali</a>
+                        <a class="btn btn-danger"href="/manageFaq">kembali</a>
                     </div>
                 </div>
                 </form>

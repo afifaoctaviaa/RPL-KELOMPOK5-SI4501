@@ -14,7 +14,7 @@
       .main-container {
         background-color: #ffffff;
         padding: 20px;
-      } 
+      }
       .header-section {
         background-image: url('images/image 1.png'); /* Adjust this path as needed */
         background-size: cover;

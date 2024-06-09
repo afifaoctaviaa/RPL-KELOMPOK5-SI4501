@@ -15,7 +15,7 @@
   <body>
     <span class="d-block p-5">
         <div class="container fw-bolder fs-3 ms-3" style="width: 120px; color: #395144">
-            Apa itu BagiBarang? 
+            Apa itu BagiBarang?
         </div>
         <p class=" ms-4 ps-2" style="width: 350px; color: #4D4536">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac aliquet lorem. Nam magna dolor, suscipit fermentum placerat ac, faucibus at purus.</p>
         <a class="text-light ms-4 p-2"style="width: 200px; background-color: #395144" href="/registrasi">Daftar Sekarang</a>

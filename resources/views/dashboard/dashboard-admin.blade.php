@@ -14,7 +14,7 @@
             Check Sekarang
             <svg class="bi"><use xlink:href="#chevron-right"/></svg>
           </a>
-        </div> 
+        </div>
     
       </div>
     </div>
@@ -23,8 +23,8 @@
             <div class="col p-4 d-flex flex-column position-static">
             <h3 class="mb-0">Jumlah FAQs</h3>
             <p class="mb-auto mt-2"></p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-                Check Sekarang 
+            <a href="{{route(ManageFAQ.manageFaq)}}" class="icon-link gap-1 icon-link-hover stretched-link">
+                Check FAQ
                 <svg class="bi"><use xlink:href="#chevron-right"/></svg>
             </a>
             </div>

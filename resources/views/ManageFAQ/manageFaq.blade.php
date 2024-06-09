@@ -2,8 +2,6 @@
 
 @section('title', 'Manage FAQ')
 
-
-
 @section('content')
 
 <h1 class="d-flex justify-content-center mt-5" style="font-weight: bold">Manage FAQ</h1>
@@ -15,7 +13,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
- 
+
         @if (Session::has('failed'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {{session('failed')}}
@@ -23,7 +21,7 @@
             </div>
         @endif
         
-        <a class="btn btn-success" href="addFaqPage">+Add</a>
+        <a class="btn btn-success" href="addFaqPage">Add</a>
         <br><br>
         <table  class="table table-bordered">
             <thead class="table-success">

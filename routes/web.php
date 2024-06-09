@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Artikelcontroller;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DonasiController;
 use App\Http\Controllers\RegisterController;
@@ -11,14 +12,14 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\MitraApprovalController;
 use App\Http\Controllers\MitraController;
+use App\Http\Controllers\faqController;
 
 Route::get('/tambah-donasi', function () {
     return view('donasi.tambah-donasi');
 });
 
-Route::get('/', function () {
-    return view('landingpage');
-});
+Route::get('/',  [LandingPageController::class, 'index'])->name('landingpage');
+Route::get('/mitra/{id}',  [LandingPageController::class, 'mitra'])->name('mitra');
 
 
 
@@ -92,3 +93,10 @@ Route::put('pengajuanmitra/{id}', [MitraController::class, 'update'])->name('pen
 Route::delete('pengajuanmitra/{id}', [MitraController::class, 'destroy'])->name('pengajuanmitra.destroy');
 
 
+// manage faq
+Route::get('/manageFaq', [faqController::class, 'manageFaq'])->name('manageFaq');
+Route::get('/addFaqPage', [faqController::class, 'addFaqPage'])->name('addFaqPage');
+Route::post('/addFaq', [faqController::class, 'addFaq'])->name('addFaq');
+Route::get('/updateFaq/{id}', [faqController::class, 'updateFaq'])->name('updateFaq');
+Route::post('/updateDataFaq/{id}', [faqController::class, 'update'])->name('updateDataFaq');
+Route::get('/delete-faq/{id}', [faqController::class, 'delete'])->name("delete");

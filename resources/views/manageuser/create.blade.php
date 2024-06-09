@@ -16,7 +16,7 @@
                 <input id="full_name" class="form-control @error('full_name') is invalid @enderror" type="text" name="full_name" required value="{{ old('full_name') }}">
                 @error('full_name')
                 <div class="invalid-feedback">{{$message}}</div>
-                @enderror 
+                @enderror
             </div>
             <div class="form-group mt-3">
                 <label for="my-input my-2">Username</label>

@@ -15,7 +15,7 @@
         <div class="col">Kami mengumpulkan dua jenis informasi dari Anda:</div>
         <div class="col mt-1">Informasi yang Anda berikan:</div>
         <div class="col">
-          <ul> 
+          <ul>
             <li>Informasi Pendaftaran: Ketika Anda mendaftar di Situs, kami mengumpulkan informasi pribadi Anda seperti nama, alamat email, nomor telepon, alamat, dan informasi demografis lainnya.</li>
             <li>Informasi Donasi: Ketika Anda melakukan donasi, kami mengumpulkan informasi tentang donasi Anda seperti jumlah donasi, metode pembayaran, dan informasi penerima donasi.</li>
             <li>Informasi Lainnya: Kami juga dapat mengumpulkan informasi lain dari Anda seperti komentar, umpan balik, dan pertanyaan.</li>

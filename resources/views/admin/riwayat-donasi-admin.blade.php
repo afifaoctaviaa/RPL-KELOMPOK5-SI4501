@@ -13,7 +13,7 @@
         @endif
 
         <table class="table table-striped table-sm">
-          <thead> 
+          <thead>
             <tr>
               <th scope="col">ID</th>
               <th scope="col">UserID</th>

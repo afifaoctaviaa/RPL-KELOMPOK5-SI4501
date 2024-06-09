@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/donasi.css') }}">
     <!--<script type="text/javascript" src="{{ asset('css/trix.css') }}"></script>-->
   </head>
-  <body> 
+  <body>
 
     @yield('content')
     

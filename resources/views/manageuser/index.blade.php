@@ -16,7 +16,7 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Full_Name</th> 
+                <th>Full_Name</th>
                 <th>Username</th>
                 <th>Telpon</th>
                 <th>Email</th>
