@@ -22,6 +22,7 @@ class Mitra extends Model
         'dokumen_legalitas',
         'proposal_program',
         'laporan_keuangan',
+        'foto_mitra',
         'status'
     ];
 }

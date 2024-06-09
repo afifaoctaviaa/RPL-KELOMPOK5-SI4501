@@ -17,7 +17,7 @@
             <img src="{{ asset('storage/artikel/'. $artikel->photo) }}" class="my-4" alt="Article Image" style="width: 500px; height: 450px;">
         </div>
         <div class="card-body">
-            <p class="card-text">{{ $artikel -> body }}</p>
+            <p class="card-text">{!! $artikel -> body !!}</p>
         </div>
       </div>      
   </div>

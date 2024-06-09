@@ -35,7 +35,7 @@ class MitraController extends Controller
             'alamat_organisasi' => 'required|string|max:255',
             'telepon_organisasi' => 'required|string|max:20',
             'email_organisasi' => 'required|email|max:255',
-            'website_organisasi' => 'nullable|url|max:255',
+            'website_organisasi' => 'nullable|max:255',
             'nama_kontak_person' => 'required|string|max:255',
             'jabatan_kontak_person' => 'required|string|max:255',
             'telepon_kontak_person' => 'required|string|max:20',
@@ -44,8 +44,7 @@ class MitraController extends Controller
             'proposal_program' => 'required|file|mimes:pdf,doc,docx|max:10240',
             'laporan_keuangan' => 'required|file|mimes:pdf,doc,docx|max:10240',
         ]);
-        
-        
+
         // Prepare data for database
         $dataToUpdate = $request->except(['dokumen_legalitas', 'proposal_program', 'laporan_keuangan']);
         
@@ -64,13 +63,20 @@ class MitraController extends Controller
         $proposalProgram->move(public_path('storage/proposal_program'), $proposalProgramName);
         $dataToUpdate['proposal_program'] = $proposalProgramName;
     }
-    
+
     // Upload laporan_keuangan
     if ($request->hasFile('laporan_keuangan')) {
         $laporanKeuangan = $request->file('laporan_keuangan');
         $laporanKeuanganName = 'laporan_keuangan_' . time() . '.' . $laporanKeuangan->getClientOriginalExtension();
         $laporanKeuangan->move(public_path('storage/laporan_keuangan'), $laporanKeuanganName);
         $dataToUpdate['laporan_keuangan'] = $laporanKeuanganName;
+    }
+
+    if ($request->hasFile('foto_mitra')) {
+        $laporanKeuangan = $request->file('foto_mitra');
+        $laporanKeuanganName = 'foto_mitra_' . time() . '.' . $laporanKeuangan->getClientOriginalExtension();
+        $laporanKeuangan->move(public_path('storage/foto_mitra'), $laporanKeuanganName);
+        $dataToUpdate['foto_mitra'] = $laporanKeuanganName;
     }
     
     // Insert data into database
@@ -109,7 +115,7 @@ class MitraController extends Controller
         'alamat_organisasi' => 'required|string|max:255',
         'telepon_organisasi' => 'required|string|max:20',
         'email_organisasi' => 'required|email|max:255',
-        'website_organisasi' => 'nullable|url|max:255',
+        'website_organisasi' => 'nullable|max:255',
         'nama_kontak_person' => 'required|string|max:255',
         'jabatan_kontak_person' => 'required|string|max:255',
         'telepon_kontak_person' => 'required|string|max:20',
@@ -117,12 +123,13 @@ class MitraController extends Controller
         'dokumen_legalitas' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:10240',
         'proposal_program' => 'nullable|file|mimes:pdf,doc,docx|max:10240',
         'laporan_keuangan' => 'nullable|file|mimes:pdf,doc,docx|max:10240',
+        'foto_mitra' => 'nullable|image|mimes:png,jpg,jpeg',
     ]);
 
     $pengajuan = Mitra::findOrFail($id);
 
     // Prepare data for database update
-    $dataToUpdate = $request->except(['dokumen_legalitas', 'proposal_program', 'laporan_keuangan']);
+    $dataToUpdate = $request->except(['dokumen_legalitas', 'proposal_program', 'laporan_keuangan','foto_mitra']);
 
     // Upload dokumen_legalitas
     if ($request->hasFile('dokumen_legalitas')) {
@@ -146,6 +153,13 @@ class MitraController extends Controller
         $laporanKeuanganName = 'laporan_keuangan_' . time() . '.' . $laporanKeuangan->getClientOriginalExtension();
         $laporanKeuangan->move(public_path('storage/laporan_keuangan'), $laporanKeuanganName);
         $dataToUpdate['laporan_keuangan'] = $laporanKeuanganName;
+    }
+
+    if ($request->hasFile('foto_mitra')) {
+        $fotomitra = $request->file('foto_mitra');
+        $fotomitraName = 'foto_mitra' . time() . '.' . $fotomitra->getClientOriginalExtension();
+        $fotomitra->move(public_path('storage/foto_mitra'), $fotomitraName);
+        $dataToUpdate['foto_mitra'] = $fotomitraName;
     }
 
     // Update data in the database

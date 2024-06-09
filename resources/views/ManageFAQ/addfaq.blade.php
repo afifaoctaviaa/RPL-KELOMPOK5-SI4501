@@ -1,4 +1,4 @@
-@extends('componentsAdmin.mainLayout')
+@extends('layout.template-layout')
 
 @section('title', 'Add FAQ')
 
@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+@include('layout.main-layout')
 
 
 <div class="container mt-lg-5">

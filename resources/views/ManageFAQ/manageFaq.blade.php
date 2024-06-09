@@ -1,10 +1,11 @@
-@extends('componentsAdmin.mainLayout')
+@extends('layout.template-layout')
 
 @section('title', 'Manage FAQ')
 
 
 
 @section('content')
+@include('layout.main-layout')
 
 <h1 class="d-flex justify-content-center mt-5" style="font-weight: bold">Manage FAQ</h1>
 <div class="d-flex justify-content-center align-items-center" style="min-height: 35vh;">    
