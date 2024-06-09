@@ -18,7 +18,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($riwayat as $donasi)
+            @foreach ($donasis as $donasi)
             <tr>
               <td>{{ $donasi -> id}}</td>
               <td>{{ $donasi -> nama_barang}}</td>

@@ -5,10 +5,7 @@
 
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <head><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,11 +13,12 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
+
 
 </head>
 
@@ -133,9 +131,10 @@
                         </a>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+
         <!-- Riwayat Donasi -->
         <div class="row g-5 ">
             <div class="col-md-8">
@@ -191,14 +190,28 @@
                             @endforeach
                         </ul>
                     </div>
+
                 </div>
-            </div>
-        </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+                  <small class="text-body-secondary">January 13, 2024</small>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+  </div>
 
-    </main>
+</main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
-
+    </body>
 </html>

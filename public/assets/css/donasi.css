@@ -21,6 +21,7 @@
     font-size: 18px;
 }
 
+
 #donasi #form {
     padding: 40px 0px;
 }
@@ -46,3 +47,4 @@
     border-color: var(--hijau-muda);
     box-shadow: 0 0 0 0.2rem var(--hijau-muda);
 }
+
