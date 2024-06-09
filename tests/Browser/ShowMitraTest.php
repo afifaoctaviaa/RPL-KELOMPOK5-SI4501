@@ -15,6 +15,7 @@ class ShowMitraTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
+<<<<<<< HEAD
                 ->assertSee('Muhamadiyah')
                 ->pause(2000)
                 ->clickLink('Muhamadiyah')
@@ -23,6 +24,16 @@ class ShowMitraTest extends DuskTestCase
                 ->pause(2000)
                 ->clickLink('Kembali')
                 ->pause(2000);
+=======
+                    ->assertSee('Muhamadiyah')
+                    ->pause(2000)
+                    ->clickLink('Muhamadiyah')
+                    ->pause(2000)
+                    ->assertPathIs('/mitra/2')
+                    ->pause(2000)
+                    ->clickLink('Kembali')
+                    ->pause(2000);
+>>>>>>> 4b903dc0cafe52dec0ec4d39e2aa387d0b99ff95
         });
     }
 }

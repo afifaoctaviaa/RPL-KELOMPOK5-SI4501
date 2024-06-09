@@ -58,7 +58,11 @@
                     <h3 class="mb-0">Approval Mitra</h3>
                     <p class="mb-auto mt-2"></p>
                     <a href="/mitra" class="icon-link gap-1 icon-link-hover stretched-link">
+<<<<<<< HEAD
                         Check Mitra
+=======
+                        Check Sekarang
+>>>>>>> 4b903dc0cafe52dec0ec4d39e2aa387d0b99ff95
                         <svg class="bi">
                             <use xlink:href="#chevron-right" />
                         </svg>
