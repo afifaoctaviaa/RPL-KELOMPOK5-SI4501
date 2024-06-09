@@ -17,14 +17,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ReviewAdminController;
 
-use App\Http\Controllers\ManageUserController;
-use App\Http\Controllers\MitraApprovalController;
-use App\Http\Controllers\MitraController;
-use App\Http\Controllers\faqController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\ReviewAdminController;
-
 
 Route::get('/tambah-donasi', function () {
     return view('donasi.tambah-donasi');

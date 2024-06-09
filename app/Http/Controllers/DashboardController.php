@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Donasi;
 use App\Models\Notification;
 use App\Models\Article;
-use App\Models\Article;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Support\Facades\Auth;
 
 
