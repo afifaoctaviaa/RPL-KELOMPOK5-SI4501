@@ -23,11 +23,7 @@
     <link href="/css/blog.css" rel="stylesheet">
 
 </head>
-<style>
-    span {
-        background: url('images/image 1.png');
-    }
-</style>
+
 
 <body>
 
@@ -53,15 +49,17 @@
 
 
     <main class="container mt-4">
-        <span class="d-block p-5 mb-5 rounded">
-            <p class="fs-4 fw-bolder ms-2"style="color:#AA8B56; width: 320px">[Jumlah Donasi] Terkumpul untuk Membantu
-                Korban<br>[Bencana Alam]</p>
-            <p class="fs-3 fw-bolder ms-2"style="color:#395144;">Setiap Donasi<br>membawa Perubahan</p>
+        @foreach ($artikels as $artikel )
+        <span class="d-block p-5 mb-5 rounded" style="background: url({{ asset('storage/artikel/' . $artikel->photo) }});  background-position: center; background-repeat: no-repeat;background-size: cover;">
+            <p class=" fs-4 fw-bolder ms-2"style="color:#AA8B56; width: 320px">{{ Str::limit($artikel -> judul, 100) }}</p>
+            <p class="fs-3 fw-bolder ms-2"style="color:#395144; width: 320px">Berita Tentang Bantuan Kemanusiaan</p>
             <div class="p-2 g-col-6 ms-2">
                 <a type="button" class="btn text-light" style="background-color:#AA8B56; width: 200px"
-                    href=" ">Selengkapnya</a>
+                    href="{{ url('/show-artikel') }} ">Selengkapnya</a>
             </div>
         </span>
+        @endforeach
+       
 
         <div class="row mb-2">
             <div class="col-md-6">
@@ -94,7 +92,7 @@
                         <h3 class="mb-0">Review</h3>
                         <p class="mb-auto">Segala review yang Anda Berikan akan sangat membantu pengembangan website ini
                         </p>
-                        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link text-light">
+                        <a href="/reviews" class="icon-link gap-1 icon-link-hover stretched-link text-light">
                             Review
                             <svg class="bi">
                                 <use xlink:href="#chevron-right" />
@@ -109,7 +107,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <h3 class="mb-0">FAQs</h3>
                         <p class="mb-auto">Jika kesulitan dalam menggunakan website ini. Cari jawabannya disini</p>
-                        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link text-light">
+                        <a href="/faq" class="icon-link gap-1 icon-link-hover stretched-link text-light">
                             FAQs
                             <svg class="bi">
                                 <use xlink:href="#chevron-right" />
@@ -122,13 +120,13 @@
                 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative text-light"
                     style="background-color: #395144;">
                     <div class="col p-4 d-flex flex-column position-static">
-                        <h3 class="mb-0">Artikel</h3>
-                        <p class="mb-auto">Berita Tentang Bantuan Kemanusiaan dapat lihat disini</p>
+                        <h3 class="mb-0">Pengajuan Mitra</h3>
+                        <p class="mb-auto">Pengajuan Mitra dapat dilakukan disini</p>
 
-                        <a href="{{ url('/show-artikel') }}"
+                        <a href="{{ url('/pengajuanmitra') }}"
 
                             class="icon-link gap-1 icon-link-hover stretched-link text-light">
-                            Artikel
+                            Pengajuan Mitra
                             <svg class="bi">
                                 <use xlink:href="#chevron-right" />
                             </svg>
@@ -146,64 +144,22 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <h3 class="mb-0">Riwayat Donasi</h3>
                         <ul class="list-unstyled">
-                            <li>
-                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top text-light"
-                                    href="#">
-                                    <svg class="bd-placeholder-img" width="100%" height="96"
-                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                                        <rect width="100%" height="100%" fill="#777" />
-                                    </svg>
-                                    <div class="col-lg-8">
-                                        <h6 class="mb-0">Example blog post title</h6>
-                                        <small class="text-light">January 15, 2024</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top text-light"
-                                    href="#">
-                                    <svg class="bd-placeholder-img" width="100%" height="96"
-                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                                        <rect width="100%" height="100%" fill="#777" />
-                                    </svg>
-                                    <div class="col-lg-8">
-                                        <h6 class="mb-0">This is another blog post title</h6>
-                                        <small class="text-light">January 14, 2024</small>
-                                    </div>
-                                </a>
-                            </li>
-                            <ul class="list-unstyled">
+                            @foreach ($donasi as $d)
                                 <li>
                                     <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top text-light"
                                         href="#">
-                                        <svg class="bd-placeholder-img" width="100%" height="96"
-                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                                            <rect width="100%" height="100%" fill="#777" />
-                                        </svg>
+                                        <img src="{{ asset('storage/barang/')  . $d->foto_barang }}"
+                                            alt="foto-barang" width="200">
                                         <div class="col-lg-8">
-                                            <h6 class="mb-0">Example blog post title</h6>
-                                            <small class="text-light">January 15, 2024</small>
+                                            <h6 class="mb-0">{{ $d->nama_barang }}</h6>
+                                                <small
+                                                    class="text-light">{{ Carbon\Carbon::parse($d->created_at)->diffForHumans() }}
+                                                </small>
                                         </div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top text-light"
-                                        href="#">
-                                        <svg class="bd-placeholder-img" width="100%" height="96"
-                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                                            <rect width="100%" height="100%" fill="#777" />
-                                        </svg>
-                                        <div class="col-lg-8">
-                                            <h6 class="mb-0">This is another blog post title</h6>
-                                            <small class="text-light">January 14, 2024</small>
-                                        </div>
-                                    </a>
-                                </li>
-
+                            @endforeach
+                        </ul>
                                 <a href="/riwayat-donasi"
                                     class="icon-link gap-1 icon-link-hover stretched-link text-light">
                                     Riwayat Donasi
@@ -217,13 +173,7 @@
             <!-- Royalti -->
             <div class="col-md-4">
                 <div class="position-sticky" style="top: 2rem;">
-                    <div class="p-4 mb-3 rounded" style="background-color:#F0EBCE">
-                        <h4 class="fst-italic">Royalti</h4>
-                        <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar w-75"></div>
-                        </div>
-                    </div>
+                 
                     <!-- Notifikasi -->
                     <div>
                         <h4 class="fst-italic">Notifikasi</svg></h4>

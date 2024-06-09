@@ -20,7 +20,7 @@
           <tbody>
             @foreach ($riwayat as $donasi)
             <tr>
-              <td>{{ $donasi -> user_id}}</td>
+              <td>{{ $donasi -> id}}</td>
               <td>{{ $donasi -> nama_barang}}</td>
               <td>{{ $donasi -> kategori_barang}}</td>
               <td>{{ $donasi -> detail_barang}}</td>

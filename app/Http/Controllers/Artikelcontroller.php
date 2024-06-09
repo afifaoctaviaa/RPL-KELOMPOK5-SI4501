@@ -26,10 +26,15 @@ class Artikelcontroller extends Controller
     public function store(Request $request)
     {
 
+
+
+        // Upload dokumen_legalitas
+
+        $foto = $request->file('foto');
+        $filename = time() . '.' . $foto->getClientOriginalExtension();
+        $foto->move(public_path('storage/artikel'), $filename);
+
         // Simpan foto artikel
-        $filename = time() . '.' . $request->file('foto')->getClientOriginalExtension();
-        $path = storage_path('app/public/artikel');
-        $request->file('foto')->move($path, $filename);
 
         Article::create([
             'user_id' => $request->user()->id,
@@ -56,12 +61,12 @@ class Artikelcontroller extends Controller
 
         $filename = $article->photo;
         if ($request->file('foto') != null) {
-            $filename = time() . '.' . $request->file('foto')->getClientOriginalExtension();
-            $path = storage_path('app/public/artikel');
-            $request->file('foto')->move($path, $filename);
+            $foto = $request->file('foto');
+            $filename = time() . '.' . $foto->getClientOriginalExtension();
+            $foto->move(public_path('storage/artikel'), $filename);
 
             // Delete old file
-            Storage::disk('public')->delete('artikel/'.$article->photo);
+            Storage::disk('public')->delete('artikel/' . $article->photo);
         }
 
         $article->update([
@@ -80,7 +85,7 @@ class Artikelcontroller extends Controller
 
         $article = Article::find($id);
 
-        Storage::disk('public')->delete('artikel/'.$article->photo);
+        Storage::disk('public')->delete('artikel/' . $article->photo);
 
         $article->delete();
         return redirect('/artikel')->with('status', 'Artikel berhasil dihapus!');
@@ -88,13 +93,13 @@ class Artikelcontroller extends Controller
 
     //* USER BACA ARTIKEL 
 
-    public function showArtikel() 
+    public function showArtikel()
     {
         $data_artikel = Article::all();
         return view('bacaartikel.show-artikel', compact('data_artikel'));
     }
 
-    public function detailArtikel(Request $request) 
+    public function detailArtikel(Request $request)
     {
         $data_article = Article::find($request->id);
         return view('bacaartikel.detail-artikel', [

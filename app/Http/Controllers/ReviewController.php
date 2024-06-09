@@ -18,18 +18,19 @@ class ReviewController extends Controller
         $averageRating = $reviews->avg('rating');
 
         // Hitung jumlah ulasan untuk setiap skor
-        $ratingsCount = $reviews->groupBy('rating')->map->count();
+        $ratingsCount = Review::selectRaw('rating, count(*) as count')
+                              ->groupBy('rating')
+                              ->pluck('count', 'rating')
+                              ->all();
 
-        // Hitung distribusi skor ulasan
-        $starDistribution = [];
-        for ($i = 5; $i >= 1; $i--) {
-            $starDistribution[$i] = isset($ratingsCount[$i]) ? round(($ratingsCount[$i] / $totalReviews) * 100, 1) : 0;
-        }
-        
         // Mengirimkan semua variabel ke tampilan
-        return view('reviews.index', compact('reviews', 'totalReviews', 'averageRating', 'starDistribution'));
+        return view('reviews.index', [
+            'reviews' => $reviews,
+            'totalReviews' => $totalReviews,
+            'averageRating' => $averageRating,
+            'ratingsCount' => $ratingsCount,
+        ]);
     }
-
 
     public function store(Request $request)
     {
