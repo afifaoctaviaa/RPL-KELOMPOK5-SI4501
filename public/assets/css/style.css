@@ -12,11 +12,11 @@
 
 .navbar {
     background-color: var(--hijau-tua) !important;
-    padding: 40px 0px;
+   
 }
 
 .navbar .navbar-nav {
-    gap: 100px;
+   
 }
 .nav-item .nav-link {
     color: var(--cokelat-muda) !important;
@@ -118,6 +118,7 @@
     box-shadow: 0 0 0 0.2rem var(--hijau-muda);
 }
 
+
 #hero {
     height: 350px;
     background-image: url('../img/hero.png');
@@ -135,6 +136,8 @@
     color: #D7C39D;
     font-size: 18px;
 }
+
+
 
 @media (max-width: 991.98px) { 
 

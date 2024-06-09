@@ -10,7 +10,7 @@
         <div class="col p-4 d-flex flex-column position-static">
           <h3 class="mb-0">Jumlah User</h3>
           <p class="card-text mb-auto mt-2"></p>
-          <a href="/donasi" class="icon-link gap-1 icon-link-hover stretched-link ">
+          <a href="/manageuser" class="icon-link gap-1 icon-link-hover stretched-link ">
             Check Sekarang
             <svg class="bi"><use xlink:href="#chevron-right"/></svg>
           </a>
@@ -42,6 +42,18 @@
             </div>
       </div>
     </div>
+    <div class="col-md-3">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style="background-color: #A8DADC;">
+          <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">Approval Mitra</h3>
+          <p class="mb-auto mt-2"></p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+              Check Sekarang 
+              <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+          </div>
+    </div>
+  </div>
 </div>
 <!-- Artikel -->
 <div class="row mb-2">
