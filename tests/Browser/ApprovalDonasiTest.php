@@ -11,7 +11,7 @@ class ApprovalDonasiTest extends DuskTestCase
     /**
      * A Dusk test example.
      */
-    public function testExample(): void
+    public function testExample(): void 
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
