@@ -55,12 +55,12 @@
                         </div>
                         <div class="form-group mt-3">
                             <label for="my-input my-2">Password</label>
-                            <input id="password" class="form-control @error('password') is invalid @enderror" type="text" name="password" required>
+                            <input id="password" class="form-control @error('password') is invalid @enderror" type="password" name="password" required>
                             @error('password')
                             <div class="invalid-feedback">{{$message}}</div>
                             @enderror
                         </div>
-                        <a type="button" class="btn btn-warning mt-3" href="/">Pelajari Lebih Lanjut</a>
+                        <a type="button" class="btn btn-warning mt-3" href="/kebijakanprivasi">Pelajari Lebih Lanjut</a>
                         <button type="submit" class="btn btn-primary mt-3 ms-2">Daftar Sekarang</button>
                     </form>
                 </div>
