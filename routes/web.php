@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Artikelcontroller;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\Artikelcontroller;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DonasiController;
 use App\Http\Controllers\RegisterController;
